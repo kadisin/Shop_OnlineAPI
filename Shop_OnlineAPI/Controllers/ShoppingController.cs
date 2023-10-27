@@ -75,5 +75,26 @@ namespace Shop_OnlineAPI.Controllers
             var result = dataAccess.GetProductReviews(ProductId);
             return Ok(result);
         }
+
+        [HttpPost("InsertCartItem/{userid}/{productid}")]
+        public IActionResult InsertCartItem(int userid, int productid)
+        {
+            var result = dataAccess.InsertCartItem(userid, productid);
+            return Ok(result ? "inserted" : "not inserted");
+        }
+
+        [HttpGet("GetActiveCartOfUser/{id}")]
+        public IActionResult GetActiveCartOfUser(int id)
+        {
+            var result = dataAccess.GetActiveCartOfUser(id);
+            return Ok(result);
+        }
+
+        [HttpGet("GetAllPreviousCartsOfUser/{id}")]
+        public IActionResult GetAllPreviousCartsOfUser(int id)
+        {
+            var result = dataAccess.GetAllPreviousCartsOfUser(id);
+            return Ok(result);
+        }
     }
 }
