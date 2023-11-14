@@ -119,5 +119,18 @@ namespace Shop_OnlineAPI.Controllers
             var id = dataAccess.InsertOrder(order);
             return Ok(id.ToString());
         }
+
+        [HttpGet("TestAPI")]
+        public IActionResult TestApi()
+        {
+            return Ok("Success");
+        }
+
+        [HttpGet("TestErrorAPI")]
+        public IActionResult TestErrorApi()
+        {
+            return BadRequest("Erorr");
+        }
+
     }
 }
