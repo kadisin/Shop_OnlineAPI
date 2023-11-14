@@ -25,5 +25,9 @@ namespace Shop_OnlineAPI.DataAccess
         Cart GetActiveCartOfUser(int userid);
         Cart GetCart(int cartid);
         List<Cart> GetAllPreviousCartsOfUser(int userid);
+        List<PaymentMethod> GetPaymentMethods();
+        int InsertPayment(Payment payment);
+        int InsertOrder(Order order);
+
     }
 }
