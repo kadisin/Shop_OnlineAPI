@@ -310,6 +310,10 @@ namespace Shop_OnlineAPI.DataAccess
                     var productid = (int)reader["ProductId"];
                     review.Product = GetProduct(productid);
 
+                    review.User.Password = "Nie zesraj sie polaczku";
+                    review.User.Address = string.Empty;
+                    review.User.Mobile = string.Empty;
+
                     reviews.Add(review);
                 }
             }
